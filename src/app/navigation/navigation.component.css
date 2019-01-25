@@ -1,9 +1,10 @@
 .nav {
-  border: 1px black solid;
-  width: 250px;
-  z-index: 999;
-  position: absolute;
-  margin: -8px 0;
-  height: 100vh;
+  border-right: 1px black solid;
   background-color: white;
+  width: 300px;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
 }

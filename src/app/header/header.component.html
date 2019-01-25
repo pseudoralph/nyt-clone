@@ -1,29 +1,26 @@
-<div class="header">
-
-  <div> 
-    <img src="assets/img/pancakes_icon.svg" (click)="toggleNav()" class="pancake">
-    
-    <img src="assets/img/search.svg" class="search" [class.selected]="showSearchBox" (click)="showSearchBox = showSearchBox ? false:true">
-    <div class="search-field" *ngIf="showSearchBox" >
-      <input type="text" placeholder="SEARCH" #searchBox >
-      <button (click)="goSearch(searchBox.value); showSearchBox = false">GO</button>
-    </div>
-
+<div> 
+  <img src="assets/img/pancakes_icon.svg" (click)="toggleNav()" class="pancake">
+  
+  <img src="assets/img/search.svg" class="search" [class.selected]="showSearchBox" (click)="showSearchBox = showSearchBox ? false:true">
+  <div class="search-field" *ngIf="showSearchBox" >
+    <input type="text" placeholder="SEARCH" #searchBox >
+    <button (click)="goSearch(searchBox.value); showSearchBox = false">GO</button>
   </div>
 
-  <h1>
-    NY Times
-  </h1>
+</div>
 
-  <p>{{ today }}</p>
+<h1>
+  NY Times
+</h1>
 
-  
-  <div class="masthead">
-    <ul>
-      <li *ngFor="let heading of mastHeadings">{{ heading }}</li>  
-    </ul>
-  
-  </div>
-</div>  
+<p>{{ today }}</p>
+
+
+<div class="masthead">
+  <ul>
+    <li *ngFor="let heading of mastHeadings">{{ heading }}</li>  
+  </ul>
+</div>
+
 
 
