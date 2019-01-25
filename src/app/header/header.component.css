@@ -1,14 +1,3 @@
-.header {
-  /* font-family: nyt-franklin, helvetica, arial, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  color: rgb(51, 51, 51);
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 2rem; */
-}
-
-
 h1 { 
   text-align: center;
 }
@@ -18,12 +7,16 @@ ul {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 10px 0;
+  padding: 0;
 }
 
 li {
   list-style-type: none;
-  padding: 0;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 5px;
+  white-space: nowrap;
 }
 
 .masthead {
@@ -33,20 +26,18 @@ li {
   border-top-color: rgb(235, 235, 235);
   border-top-style: solid;
   border-top-width: 1px;
-  padding: 0 60px;
+  padding: 0 30px;
 }
-
-
 
 .pancake, .search {
   border-radius: 5px;
   padding: 10px 7px 5px 13px;
   margin-right: 7px;
+  cursor: pointer;
 }
 
-.pancake:hover, .search:hover {
+li:hover, .pancake:hover, .search:hover, .selected {
   background-color: #f1f1f1;
-  cursor: pointer;
 }
 
 .search-field {
@@ -78,6 +69,3 @@ li {
   border-radius: 3px;
 }
 
-.selected {
-  background-color: #f1f1f1;
-}

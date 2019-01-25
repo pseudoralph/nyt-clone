@@ -1,5 +1,7 @@
 .nav {
-  border-right: 1px black solid;
+  border-radius: 4px;
+  box-shadow: 8px 0px 12px 0px #e9e9e9d1;
+  border-right: 1px #dbdbdb solid;
   background-color: white;
   width: 300px;
   z-index: 999;
