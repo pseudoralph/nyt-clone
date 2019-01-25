@@ -9,6 +9,7 @@ import { dateBuilder } from '../date-builder';
 export class HeaderComponent implements OnInit {
   @Output() navVisible = new EventEmitter();
 
+  showSearchBox: boolean;
   today: string = dateBuilder();
 
   ngOnInit() {

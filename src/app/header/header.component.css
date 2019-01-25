@@ -195,3 +195,11 @@ li {
 .search-field {
   display: inline-block;
 }
+
+.edition p {
+  display: block;
+}
+
+.text-right {
+  text-align: right;
+}

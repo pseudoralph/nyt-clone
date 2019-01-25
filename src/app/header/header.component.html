@@ -1,11 +1,11 @@
 <div class="header">
   <div> 
     <img src="assets/img/pancakes_icon.svg" (click)="toggleNav()" class="pancake">
-    <img src="assets/img/search.svg" class="search">
+    <img src="assets/img/search.svg" class="search" (click)="showSearchBox = showSearchBox ? false:true">
 
-    <div class="search-field" >
-      <input type="text" #searchBox>
-      <button (click)="goSearch(searchBox.value)">GO</button>
+    <div class="search-field" *ngIf="showSearchBox">
+      <input type="text" #searchBox >
+      <button (click)="goSearch(searchBox.value); showSearchBox = false">GO</button>
     </div>
 
   </div>
@@ -14,9 +14,10 @@
     NY Times
   </h1>
 
-  <div class="edition">
-    <p>{{ today }}</p>
-    <p>Today's Paper</p>
+  <div class="">
+      <p>{{ today }}</p>
+
+      <p>Today's Paper</p>
   </div>
   
   <div class="masthead">
