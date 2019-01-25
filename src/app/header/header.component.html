@@ -1,6 +1,20 @@
-<p>
-  header works!
-</p>
+<app-pancakes *ngIf="openNav"></app-pancakes>
+
+
+<div> 
+  <img src="assets/img/pancakes_icon.svg" alt="nav" (click)="openNav = true">
+  <img src="assets/img/search.svg" alt="nav" (click)="openNav = true">
+
+</div>
+
+<div class="languages">
+  English Español
+</div>
+
+
+<h1>
+  NY Times
+</h1>
 
 <div class="masthead">
   <ul>
