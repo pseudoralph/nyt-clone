@@ -1,7 +1,9 @@
-<div class="nav" (blur)="navOut()">
+<div class="nav" (mouseleave)="navOut()">
   
-  <p>
-    navigation works!
-  </p>
+<ul>
+  <li *ngFor="let item of navElements">{{item}} </li>
+
+</ul>
+
 
 </div>
