@@ -1,26 +1,29 @@
-<app-pancakes *ngIf="openNav"></app-pancakes>
+<app-navigation *ngIf="navOpen"></app-navigation>
 
+<div class="header">
 
-<div> 
-  <img src="assets/img/pancakes_icon.svg" alt="nav" (click)="openNav = true">
-  <img src="assets/img/search.svg" alt="nav" (click)="openNav = true">
+  <div> 
+    <img src="assets/img/pancakes_icon.svg" (click)="navOpen = navOpen ? false:true" class="pancake">
+    <img src="assets/img/search.svg" class="search">
+    
+  </div>
+    
+  <div class="languages">
+    English Español
+  </div>
+    
+    
+  <h1>
+    NY Times
+  </h1>
+  
+  <div class="masthead">
+    <ul>
+      <li *ngFor="let heading of mastHeadings">{{ heading }}</li>  
+    </ul>
+  
+    
+  </div>
+</div>  
 
-</div>
-
-<div class="languages">
-  English Español
-</div>
-
-
-<h1>
-  NY Times
-</h1>
-
-<div class="masthead">
-  <ul>
-    <li *ngFor="let heading of mastHeadings">{{ heading }}</li>  
-  </ul>
-
-
-</div>
 
