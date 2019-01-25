@@ -1,19 +1,18 @@
 export class USMarkets {
-  private tickers: string[] = ['DJIA','GSPC'];
-  private api: string = 'E8E527S2C4TU78JR';
+  private api = 'E8E527S2C4TU78JR';
 
-  getStocks() {
-    return new Promise(function(resolve, reject) {
-      const url=`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${this.tickers[1]}&interval=5min&apikey=${this.api}`;
+  getStocks(ticker) {
+    return new Promise((resolve, reject) => {
+      const url=`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${ticker}&interval=5min&apikey=${this.api}`;
       const request: XMLHttpRequest = new XMLHttpRequest();
       
       request.onload = function() {
         if (this.status === 200) {
-          resolve(request.response)
+          resolve(JSON.parse(request.response))
         } else {
           reject(Error(request.statusText))
           }
-      }
+      };
 
       request.open('GET',url);
       request.send();
