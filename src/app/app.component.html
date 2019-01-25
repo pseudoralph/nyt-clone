@@ -1,3 +1,4 @@
 <!-- <router-outlet></router-outlet> -->
 
-<app-header></app-header>
+<app-navigation *ngIf="navOpen" (navVisible)="toggleNav()"></app-navigation>
+<app-header (navVisible)="toggleNav()"></app-header>

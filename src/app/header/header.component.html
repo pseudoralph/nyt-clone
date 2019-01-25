@@ -1,17 +1,13 @@
-<app-navigation *ngIf="navOpen"></app-navigation>
 
 <div class="header">
-
   <div> 
-    <img src="assets/img/pancakes_icon.svg" (click)="navOpen = navOpen ? false:true" class="pancake">
+    <img src="assets/img/pancakes_icon.svg" (click)="toggleNav()" class="pancake">
     <img src="assets/img/search.svg" class="search">
-    
   </div>
     
   <div class="languages">
     English Español
   </div>
-    
     
   <h1>
     NY Times
@@ -22,7 +18,6 @@
       <li *ngFor="let heading of mastHeadings">{{ heading }}</li>  
     </ul>
   
-    
   </div>
 </div>  
 

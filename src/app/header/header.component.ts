@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  @Output() navVisible = new EventEmitter();
+
   mastHeadings: string[] = [ 'World', 'U.S.', 'Politics', 'N.Y.', 'Business', 'Opinion', 'Tech', 'Science', 'Health', 'Sports', 'Arts', 'Books', 'Style', 'Food', 'Travel', 'Magazine', 'T Magazine', 'Real Estate', 'Video'];
 
-  navOpen: Boolean;
-
   toggleNav() {
-    this.navOpen = this.navOpen ? false : true;
-
-    console.log(this.navOpen)
+    this.navVisible.emit();
   }
+
+
 
 }
