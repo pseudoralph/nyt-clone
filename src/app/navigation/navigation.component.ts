@@ -12,7 +12,6 @@ export class NavigationComponent {
 
   navOut() {
     this.navVisible.emit();
-    console.log('lost focus')
   }
 
 }

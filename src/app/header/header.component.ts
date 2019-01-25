@@ -14,6 +14,10 @@ export class HeaderComponent {
     this.navVisible.emit();
   }
 
+  goSearch(query) {
+    console.log(query)
+  }
+
 
 
 }

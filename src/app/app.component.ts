@@ -10,8 +10,6 @@ export class AppComponent {
 
   toggleNav() {
     this.navOpen = this.navOpen ? false : true;
-    console.log('click');
   }
-
 
 }

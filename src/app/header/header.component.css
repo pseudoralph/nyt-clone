@@ -144,10 +144,6 @@ li {
   vertical-align: baseline;
 }
 
-.languages { 
-  text-align: center;
-}
-
 .header {
   border-bottom-color: rgb(51, 51, 51);
   border-bottom-style: none;
@@ -193,5 +189,9 @@ li {
 }
 
 .pancake, .search {
-  margin-right: 20px;
+  margin: 10px 20px 0 0;
+}
+
+.search-field {
+  display: inline-block;
 }

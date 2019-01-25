@@ -1,14 +1,15 @@
-
 <div class="header">
   <div> 
     <img src="assets/img/pancakes_icon.svg" (click)="toggleNav()" class="pancake">
     <img src="assets/img/search.svg" class="search">
+
+    <div class="search-field" >
+      <input type="text" #searchBox>
+      <button (click)="goSearch(searchBox.value)">GO</button>
+    </div>
+
   </div>
-    
-  <div class="languages">
-    English Español
-  </div>
-    
+
   <h1>
     NY Times
   </h1>
