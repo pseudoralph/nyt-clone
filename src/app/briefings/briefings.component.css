@@ -1,0 +1,35 @@
+h3 {
+  margin: .2rem 0;
+}
+
+p {
+  margin: 0;
+}
+
+.briefings {
+  display: flex;
+  font-size: 12px;
+}
+
+.briefings .article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  
+  border-right: 1px solid #dedede;
+  margin: 10px 0;
+  padding: 0 15px;
+  max-width: 270px;
+}
+
+.briefings .copy,  .briefings .image{
+  display: inline-block;
+}
+
+.briefings .image {
+  margin-right: 10px;
+  background-color: gray;
+  min-width: 60px;
+  min-height: 60px;
+  max-height: 60px;
+}

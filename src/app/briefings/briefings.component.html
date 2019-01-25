@@ -1,8 +1,10 @@
 <div class="briefings">
 
-
-  <p>
-    briefings works!
-  </p>
-
+  <div *ngFor="let article of artcilesArray" class="article">
+    <div class="image"></div>
+    <div class="copy">
+      <h3>{{ article.headline}}</h3>
+      <p>{{ article.blurb }}</p>
+    </div>
+  </div>
 </div>

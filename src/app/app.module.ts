@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BriefingsComponent } from './briefings/briefings.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    BriefingsComponent
+    BriefingsComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
