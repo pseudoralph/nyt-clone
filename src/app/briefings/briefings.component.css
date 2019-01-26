@@ -9,6 +9,9 @@ p {
 .briefings {
   display: flex;
   font-size: 12px;
+  border-bottom-color: rgb(0, 0, 0);
+  border-bottom-style: double;
+  border-bottom-width: 4px;
 }
 
 .briefings .article {
