@@ -1,4 +1,4 @@
-# Doctor Lookup
+# NY Times clone
 
 #### NY Times clone website
 
