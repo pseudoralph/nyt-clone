@@ -21,11 +21,11 @@ The briefings section is a seperate component detached from heading-component. I
 
 Hierarchical overview:
 
-app-component
-|__navigation-comonent
-|__header-component
-|__briefing-component
-|__main-content-component
+* app-component
+  * navigation-comonent
+  * header-component
+  * briefing-component
+  * main-content-component
 
 ![Alt NYTimes clone](https://github.com/pseudoralph/nyt-clone/blob/master/src/assets/screen_shots/cloned_nytimes_screen_shot.png)
 
