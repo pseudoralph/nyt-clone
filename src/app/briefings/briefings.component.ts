@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
 import { USMarkets } from '../stock-getter';
+import { LocalizedTemp } from '../temp-getter';
 
 @Component({
   selector: 'app-briefings',
@@ -15,6 +16,9 @@ export class BriefingsComponent implements OnInit {
     price: null,
     ready: false};
 
+    // parseFloat(".0243").toFixed(2);
+
+
   djiaResults = {
     changePercent: null,
     price: null,
@@ -23,13 +27,13 @@ export class BriefingsComponent implements OnInit {
   stocks: USMarkets = new USMarkets();
 
   gspc = this.stocks.getStocks('gspc').then((response)=>{
-    this.gpscResults.changePercent =  response["change percent"];
+    this.gpscResults.changePercent =  parseFloat(response["change percent"]).toFixed(2);
     this.gpscResults.price = response["price"];
     this.gpscResults.ready = true;
   });
 
   djia = this.stocks.getStocks('djia').then((response)=>{
-    this.djiaResults.changePercent =  response["change percent"];
+    this.djiaResults.changePercent =  parseFloat(response["change percent"]).toFixed(2);
     this.djiaResults.price = response["price"];
     this.djiaResults.ready = true;
   });
@@ -45,6 +49,9 @@ export class BriefingsComponent implements OnInit {
     // stocks.getStocks('djia').then(function(results) {
     //   console.log(results)
     // });
+
+    const weatherHere = new LocalizedTemp();
+    weatherHere.getLatLong().then( (response)=> console.log(response) );
 
   }
 

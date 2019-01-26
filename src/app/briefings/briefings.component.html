@@ -9,9 +9,13 @@
     </div>
   </div>
 
-  <div *ngIf="gpscResults.ready && djiaResults.ready">
-    S&P 500: <span [class]="gpscResults.changePercent > 0 ? 'up':'down' "> {{ gpscResults.changePercent }} </span><br>
-    Dow: {{ djiaResults.changePercent }}
+  <div *ngIf="gpscResults.ready && djiaResults.ready" class="stock-ticker">
+    <p>
+      S&P 500: <span [class]="gpscResults.changePercent > 0 ? 'up':'down' "> {{ gpscResults.changePercent }} </span>
+    </p>
+    <p>
+      Dow: <span [class]="djiaResults.changePercent > 0 ? 'up':'down' "> {{ djiaResults.changePercent }} </span>
+    </p>
   </div>
 
 

@@ -37,6 +37,24 @@ p {
   max-height: 60px;
 }
 
+.stock-ticker {
+  border-right: 1px solid #dedede;
+  margin: 10px 0;
+  padding: 0 15px;
+}
+
+.stock-ticker p {
+  padding: 3px 0px 4px;
+}
+
+.stock-ticker p:last-child {
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
 .up {
   color: green;
+}
+
+.down {
+  color: red;
 }
