@@ -7,12 +7,14 @@
       <h3>{{ article.headline}}</h3>
       <p>{{ article.blurb }}</p>
     </div>
-  
-  
   </div>
 
-  <div class="article" *ngIf="djia">
-
-    hi there!
+  <div *ngIf="gpscResults.ready && djiaResults.ready">
+    S&P 500: <span [class]="gpscResults.changePercent > 0 ? 'up':'down' "> {{ gpscResults.changePercent }} </span><br>
+    Dow: {{ djiaResults.changePercent }}
   </div>
+
+
+
+
 </div>

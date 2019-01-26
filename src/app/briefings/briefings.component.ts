@@ -9,18 +9,42 @@ import { USMarkets } from '../stock-getter';
 })
 
 export class BriefingsComponent implements OnInit {
+  // stocksReady: boolean;
+  gpscResults = {
+    changePercent: null,
+    price: null,
+    ready: false};
+
+  djiaResults = {
+    changePercent: null,
+    price: null,
+    ready: false};
+
+  stocks: USMarkets = new USMarkets();
+
+  gspc = this.stocks.getStocks('gspc').then((response)=>{
+    this.gpscResults.changePercent =  response["change percent"];
+    this.gpscResults.price = response["price"];
+    this.gpscResults.ready = true;
+  });
+
+  djia = this.stocks.getStocks('djia').then((response)=>{
+    this.djiaResults.changePercent =  response["change percent"];
+    this.djiaResults.price = response["price"];
+    this.djiaResults.ready = true;
+  });
 
 
   ngOnInit() {
-    const stocks: USMarkets = new USMarkets();
+    // const stocks: USMarkets = new USMarkets();
 
-    stocks.getStocks('gspc').then(function(results) {
-      console.log(results)
-    });
+    // stocks.getStocks('gspc').then(function(results) {
+    //   console.log(results)
+    // });
 
-    stocks.getStocks('djia').then(function(results) {
-      console.log(results)
-    });
+    // stocks.getStocks('djia').then(function(results) {
+    //   console.log(results)
+    // });
 
   }
 
