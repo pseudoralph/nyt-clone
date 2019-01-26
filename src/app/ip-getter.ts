@@ -1,6 +1,4 @@
 export class FindIP {
-  public latLong: Object = {lat: null, long: null};
-
   getLatLong() {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest();
@@ -23,6 +21,5 @@ export class FindIP {
 
     });
   }
-
 
 }

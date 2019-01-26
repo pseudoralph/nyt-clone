@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
 import { USMarkets } from '../stock-getter';
+import { FindIP } from '../ip-getter'
 import { LocalizedTemp } from '../temp-getter';
 
 @Component({
@@ -10,21 +11,28 @@ import { LocalizedTemp } from '../temp-getter';
 })
 
 export class BriefingsComponent implements OnInit {
-  // stocksReady: boolean;
+  ngOnInit() {  }
+
+  stocks: USMarkets = new USMarkets();
+  location: FindIP = new FindIP();
+  localWeather: LocalizedTemp = new LocalizedTemp();
+
   gpscResults = {
     changePercent: null,
     price: null,
-    ready: false};
-
-    // parseFloat(".0243").toFixed(2);
-
-
+    ready: false
+  };
+    
   djiaResults = {
     changePercent: null,
     price: null,
-    ready: false};
-
-  stocks: USMarkets = new USMarkets();
+    ready: false
+  };
+    
+  weatherResults = {
+    rawDump: null,
+    ready: false
+  };
 
   gspc = this.stocks.getStocks('gspc').then((response)=>{
     this.gpscResults.changePercent =  parseFloat(response["change percent"]).toFixed(2);
@@ -38,22 +46,14 @@ export class BriefingsComponent implements OnInit {
     this.djiaResults.ready = true;
   });
 
+  weather = this.location.getLatLong().then( (ip) => {
+    this.localWeather.getLocalWeather(ip).then( (weather) => {
+      this.weatherResults.rawDump = weather;
+      this.weatherResults.ready = true;
 
-  ngOnInit() {
-    // const stocks: USMarkets = new USMarkets();
-
-    // stocks.getStocks('gspc').then(function(results) {
-    //   console.log(results)
-    // });
-
-    // stocks.getStocks('djia').then(function(results) {
-    //   console.log(results)
-    // });
-
-    const weatherHere = new LocalizedTemp();
-    weatherHere.getLatLong().then( (response)=> console.log(response) );
-
-  }
+      console.log(weather);
+    });
+  });
 
   artcilesArray: BriefingsArticle[] = [
     new BriefingsArticle(`Listen to 'The Daily'`, 'One country, two presidents: explaining the crisis in Venezuela.'),
