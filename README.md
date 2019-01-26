@@ -27,6 +27,7 @@ app-component
 |__briefing-component
 |__main-content-component
 
+![Alt NYTimes clone](https://github.com/pseudoralph/nyt-clone/blob/master/src/assets/screen_shots/cloned_nytimes_screen_shot.png)
 
 ## Setup/Installation Requirements
 
