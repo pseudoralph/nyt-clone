@@ -8,6 +8,26 @@
 
 A study in converting a site to Angular
 
+## Details
+
+This study attempts to modularize the NYTimes website by creating logical components to represent website functionality. This includes a navigation bar (accessible by the ubiquitous pancake stack) that responds much like the NYTimes' site does— click to open, mouse out to close. Navigation is a seperate component (navigation-component) this is attached to the app-component module .
+
+Similar functionality was observed and duplicated in the search module (accessible by the magnifying glass icon). It operates as a toggle, where the only way to close it is by clicking on the icon. Search is then passed along to a method at the header-component level.
+
+The current date displayed on the left-hand side is produced by parsing JS's Date.now() object. This is handled by an imported module (date-builder.ts).
+
+The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with local weather. Note, these features are works-in-progress as of Friday submission: 
+(can instantiate objects from stock-getter.ts and return a promise that resolves with JSON data)
+
+Hierarchical overview:
+
+app-component
+|__navigation-comonent
+|__header-component
+|__briefing-component
+|__main-content-component
+
+
 ## Setup/Installation Requirements
 
 * clone this repository using `git clone https://github.com/pseudoralph/nyt-clone`
