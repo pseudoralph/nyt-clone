@@ -7,11 +7,13 @@ export class FindIP {
 
       request.onload = function() {
         if (this.status === 200) {
+          
           const rawData = {
             lat: JSON.parse(request.response)["latitude"],
-            long: JSON.parse(request.response)["longitude"]
+            long: JSON.parse(request.response)["longitude"],
+            payload: JSON.parse(request.response)
           }
-          resolve(rawData);
+          resolve(JSON.parse(request.response));
 
         } else { reject(Error(request.statusText)) }
       }

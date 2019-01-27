@@ -18,11 +18,12 @@
     </p>
   </div>
 
-  <div *ngIf="weatherResults.ready">
-    <p>weather goes here</p>
+  <div *ngIf="weatherResults.ready" class="localized-weather">
+    <p id="weather">
+      {{ (weatherResults.rawDump.main.temp - 273.15) * 9/5 +32 | number:'1.0-0' }}°F
+    </p>
+    <p>
+      {{ weatherResults.location}}
+    </p>
   </div>
-
-
-
-
 </div>

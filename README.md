@@ -16,8 +16,9 @@ Similar functionality was observed and duplicated in the search module (accessib
 
 The current date displayed on the left-hand side is produced by parsing JS's Date.now() object. This is handled by an imported module (date-builder.ts).
 
-The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with local weather. Note, these features are works-in-progress as of Friday submission: 
-(can instantiate objects from stock-getter.ts and return a promise that resolves with JSON data)
+The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with localilized weather. 
+
+Note, these features were implement past Friday's deadline and are still considered works-in-progress (will be refactoring these components to be observables).
 
 Hierarchical overview:
 

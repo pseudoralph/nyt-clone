@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
+
 import { USMarkets } from '../stock-getter';
 import { FindIP } from '../ip-getter'
 import { LocalizedTemp } from '../temp-getter';
@@ -10,8 +11,7 @@ import { LocalizedTemp } from '../temp-getter';
   styleUrls: ['./briefings.component.css']
 })
 
-export class BriefingsComponent implements OnInit {
-  ngOnInit() {  }
+export class BriefingsComponent {
 
   stocks: USMarkets = new USMarkets();
   location: FindIP = new FindIP();
@@ -30,6 +30,7 @@ export class BriefingsComponent implements OnInit {
   };
     
   weatherResults = {
+    location: null,
     rawDump: null,
     ready: false
   };
@@ -46,12 +47,14 @@ export class BriefingsComponent implements OnInit {
     this.djiaResults.ready = true;
   });
 
-  weather = this.location.getLatLong().then( (ip) => {
-    this.localWeather.getLocalWeather(ip).then( (weather) => {
+  weatherHere = this.location.getLatLong()
+  .then( (ip) => {
+    const locationData = {lat: ip["latitude"], long: ip["longitude"]};
+    this.weatherResults.location = `${ip["city"]}, ${ip["region_code"]}`;
+    this.localWeather.getLocalWeather(locationData)
+    .then( (weather) => {
       this.weatherResults.rawDump = weather;
       this.weatherResults.ready = true;
-
-      console.log(weather);
     });
   });
 

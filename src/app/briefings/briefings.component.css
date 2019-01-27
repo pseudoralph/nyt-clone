@@ -43,7 +43,13 @@ p {
   padding: 0 15px;
 }
 
-.stock-ticker p {
+.localized-weather {
+  margin: 10px 0;
+  padding: 0 15px;
+
+}
+
+.stock-ticker p, .localized-weather p {
   padding: 3px 0px 4px;
 }
 
@@ -57,4 +63,9 @@ p {
 
 .down {
   color: red;
+}
+
+#weather {
+  font-size: 14px;
+  font-weight: 600;
 }
