@@ -1,8 +1,9 @@
 <div class="nav" (mouseleave)="navOut()">
    
-  
   <ul>
-    <li *ngFor="let item of navElements">{{item}} </li>
+    <li *ngFor="let item of navElements" [class]='
+    (item.feature === "expandable") ? "expandable" : 
+    (item.feature === "line") ? "line" : "" '>{{item.text}} </li>
   </ul>
 
 </div>

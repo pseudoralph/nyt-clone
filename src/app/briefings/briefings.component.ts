@@ -51,7 +51,6 @@ export class BriefingsComponent {
 
   weatherHere = this.location.getLatLong()
   .then( (ip) => {
-    console.log(ip)
     const locationData = {lat: ip["latitude"], long: ip["longitude"]};
     this.weatherResults.rawLocation = ip;
     this.weatherResults.location = `${ip["city"]}, ${ip["region_code"]}`;

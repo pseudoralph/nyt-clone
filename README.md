@@ -50,11 +50,6 @@ JS, Angular
 
  - [x] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
 
-* Weather icons provided by [https://github.com/iconic/open-iconic](https://github.com/iconic/open-iconic)
-* Weather data provided by [https://openweathermap.org/](https://openweathermap.org/)
-* Geolocation data provided by [https://ipstack.com/](https://ipstack.com/)
-* Stock market data provided by [https://www.alphavantage.co/](https://www.alphavantage.co/)
-
 ### License
 
 MIT License
@@ -78,3 +73,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+* Weather icons provided by [https://github.com/iconic/open-iconic](https://github.com/iconic/open-iconic)
+* Weather data provided by [https://openweathermap.org/](https://openweathermap.org/)
+* Geolocation data provided by [https://ipstack.com/](https://ipstack.com/)
+* Stock market data provided by [https://www.alphavantage.co/](https://www.alphavantage.co/)

@@ -3,7 +3,7 @@
   
   <img src="assets/img/search.svg" class="search" [class.selected]="showSearchBox" (click)="showSearchBox = showSearchBox ? false:true">
   <div class="search-field" *ngIf="showSearchBox" >
-    <input type="text" placeholder="SEARCH" #searchBox >
+    <input type="text" placeholder="SEARCH" #searchBox autofocus>
     <button (click)="goSearch(searchBox.value); showSearchBox = false">GO</button>
   </div>
 
