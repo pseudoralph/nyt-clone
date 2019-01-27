@@ -18,7 +18,7 @@ The current date displayed on the left-hand side is produced by parsing JS's Dat
 
 The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with localilized weather. 
 
-Note, these features were implement past Friday's deadline and are still considered works-in-progress (will be refactoring these components to be observables).
+Note, the above features were implement past Friday's deadline and are still considered works-in-progress (will be refactoring into seperate components & researching other methods to fulfill a promise).
 
 Hierarchical overview:
 
@@ -31,6 +31,8 @@ Hierarchical overview:
 ![Alt NYTimes clone](https://github.com/pseudoralph/nyt-clone/blob/master/src/assets/screen_shots/cloned_nytimes_screen_shot.png)
 
 ## Setup/Installation Requirements
+
+The following API keys are necessary to successfull build and launch this environment: ipStack, OpenWeatherMap, and Alphavantage. Enter these keys into the `template.env.js` file and rename to `.env.js` before launching.
 
 * clone this repository using `git clone https://github.com/pseudoralph/nyt-clone`
 * navigate into this repo and download dependencies: `npm install`
@@ -48,12 +50,12 @@ JS, Angular
 
  - [x] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
 
-### License
+* Weather icons provided by [https://github.com/iconic/open-iconic](https://github.com/iconic/open-iconic)
+* Weather data provided by [https://openweathermap.org/](https://openweathermap.org/)
+* Geolocation data provided by [https://ipstack.com/](https://ipstack.com/)
+* Stock market data provided by [https://www.alphavantage.co/](https://www.alphavantage.co/)
 
-weather icons provided by https://github.com/iconic/open-iconic
-weather data provided by
-ip data provided by
-stock market data provided by
+### License
 
 MIT License
 

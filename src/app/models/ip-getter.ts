@@ -5,7 +5,7 @@ export class FindIP {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest();
       
-      const apiKey = environment.api.ip;
+      const apiKey = environment.api.geo;
       const url = `http://api.ipstack.com/check?access_key=${apiKey}`;
 
       request.onload = function() {

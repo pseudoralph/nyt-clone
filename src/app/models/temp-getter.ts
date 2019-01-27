@@ -5,7 +5,7 @@ export class LocalizedTemp {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest();
 
-      const apiKey = environment["api"].weather;
+      const apiKey = environment.api.weather;
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${locationObject.lat}&lon=${locationObject.long}&appid=${apiKey}`
 
       request.onload = function() {

@@ -5,7 +5,7 @@ export class USMarkets {
     return new Promise((resolve, reject) => {
       const request: XMLHttpRequest = new XMLHttpRequest();
 
-      const apiKey = environment["api"].markets;
+      const apiKey = environment.api.markets;
       const url=`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&interval=5min&apikey=${apiKey}`;
       
       request.onload = function() {
