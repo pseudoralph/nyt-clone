@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
 
-import { USMarkets } from '../stock-getter';
-import { FindIP } from '../ip-getter'
-import { LocalizedTemp } from '../temp-getter';
+import { USMarkets } from '../models/stock-getter';
+import { FindIP } from '../models/ip-getter'
+import { LocalizedTemp } from '../models/temp-getter';
 
 @Component({
   selector: 'app-briefings',
@@ -12,7 +12,6 @@ import { LocalizedTemp } from '../temp-getter';
 })
 
 export class BriefingsComponent {
-
   stocks: USMarkets = new USMarkets();
   location: FindIP = new FindIP();
   localWeather: LocalizedTemp = new LocalizedTemp();
@@ -30,8 +29,11 @@ export class BriefingsComponent {
   };
     
   weatherResults = {
+    icon: null,
+    fahrenheit: null,
     location: null,
-    rawDump: null,
+    rawLocation: null,
+    rawWeaather: null,
     ready: false
   };
 
@@ -50,10 +52,13 @@ export class BriefingsComponent {
   weatherHere = this.location.getLatLong()
   .then( (ip) => {
     const locationData = {lat: ip["latitude"], long: ip["longitude"]};
+    this.weatherResults.rawLocation = ip;
     this.weatherResults.location = `${ip["city"]}, ${ip["region_code"]}`;
     this.localWeather.getLocalWeather(locationData)
     .then( (weather) => {
-      this.weatherResults.rawDump = weather;
+      this.weatherResults.icon = weather["weather"][0].icon;
+      this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
+      this.weatherResults.rawWeaather = weather;
       this.weatherResults.ready = true;
     });
   });

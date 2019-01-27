@@ -1,8 +1,11 @@
+import { environment } from 'src/environments/environment';
+
 export class FindIP {
   getLatLong() {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest();
-      const apiKey = '3d543986f94c7663da4080a326c176c0';
+      
+      const apiKey = environment.api.ip;
       const url = `http://api.ipstack.com/check?access_key=${apiKey}`;
 
       request.onload = function() {

@@ -14,4 +14,5 @@ export class NavigationComponent {
     this.navVisible.emit();
   }
 
+
 }

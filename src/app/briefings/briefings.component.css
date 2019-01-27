@@ -69,3 +69,10 @@ p {
   font-size: 14px;
   font-weight: 600;
 }
+
+.weather-icon {
+  margin-right: 15px;
+  /* display: inline-block; */
+  width: 42px;
+  height: 42px;
+}

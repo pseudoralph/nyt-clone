@@ -50,6 +50,11 @@ JS, Angular
 
 ### License
 
+weather icons provided by https://github.com/iconic/open-iconic
+weather data provided by
+ip data provided by
+stock market data provided by
+
 MIT License
 
 Copyright (c) 2019, Ralph Perdomo
