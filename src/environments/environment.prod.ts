@@ -1,3 +1,7 @@
+import { apiKeys } from '../../.env.js'
+
 export const environment = {
-  production: true
+  production: true,
+  api: apiKeys
+
 };

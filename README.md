@@ -18,8 +18,6 @@ The current date displayed on the left-hand side is produced by parsing JS's Dat
 
 The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with localilized weather. 
 
-Note, the above features were implement past Friday's deadline and are still considered works-in-progress (will be refactoring into seperate components & researching other methods to fulfill a promise).
-
 Hierarchical overview:
 
 * app-component
@@ -38,6 +36,8 @@ The following API keys are necessary to successfull build and launch this enviro
 * navigate into this repo and download dependencies: `npm install`
 * launch dev environment using `ng serve --open`
   * a new browser window will open at `localhost:4200`
+
+This site is also accessible at [https://ny-times-clone.firebaseapp.com/](https://ny-times-clone.firebaseapp.com/)— note: geolocation API makes its request over an unsecured conneciton. This will cause Chrome to notify you in the address bar. You must accept this in order to see localized weather data.  
 
 ## Technologies Used
 

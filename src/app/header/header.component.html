@@ -6,15 +6,17 @@
     <input type="text" placeholder="SEARCH" #searchBox autofocus>
     <button (click)="goSearch(searchBox.value); showSearchBox = false">GO</button>
   </div>
-
 </div>
 
-<div class="logo">
-  <img src="/assets/img/nyt_logo.svg" width="40%" id="logo">
+<div>
+  <div>
+    <img src="assets/img/nyt_logo.svg" id="logo">
+  </div>
+
+  <div>
+    <p>{{ today }}</p>
+  </div>
 </div>
-
-<p>{{ today }}</p>
-
 
 <div class="masthead">
   <ul>

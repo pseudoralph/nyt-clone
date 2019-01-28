@@ -34,10 +34,8 @@ export class NavigationComponent {
     {text: 'More',  feature: 'expandable'}
   ];
 
-  
   navOut() {
     this.navVisible.emit();
   }
-
 
 }

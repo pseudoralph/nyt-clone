@@ -1,7 +1,8 @@
 #logo { 
+  width: 40%;
+  min-width: 400px;
   margin: 0 auto;
   display: inherit;
-
 }
 
 ul {
@@ -70,4 +71,3 @@ li:hover, .pancake:hover, .search:hover, .selected {
   line-height: 11px;
   border-radius: 3px;
 }
-

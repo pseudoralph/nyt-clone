@@ -1,14 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BriefingsComponent } from './briefings/briefings.component';
 import { MainContentComponent } from './main-content/main-content.component';
-
 
 @NgModule({
   declarations: [
@@ -20,7 +17,7 @@ import { MainContentComponent } from './main-content/main-content.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    // AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
