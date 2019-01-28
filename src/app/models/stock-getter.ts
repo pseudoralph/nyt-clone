@@ -1,7 +1,7 @@
 import { environment } from 'src/environments/environment';
 
 export class USMarkets {
-  getStocks(ticker) {
+  getTicker(ticker) {
     return new Promise((resolve, reject) => {
       const request: XMLHttpRequest = new XMLHttpRequest();
 

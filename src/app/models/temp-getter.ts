@@ -1,6 +1,6 @@
 import { environment } from 'src/environments/environment';
 
-export class LocalizedTemp {
+export class LocalTemp {
   getLocalWeather(locationObject) {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest();
