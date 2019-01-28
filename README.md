@@ -37,7 +37,9 @@ The following API keys are necessary to successfull build and launch this enviro
 * launch dev environment using `ng serve --open`
   * a new browser window will open at `localhost:4200`
 
-This site is also accessible at [https://ny-times-clone.firebaseapp.com/](https://ny-times-clone.firebaseapp.com/)— note: geolocation API makes its request over an unsecured conneciton. This will cause Chrome to notify you in the address bar. You must accept this in order to see localized weather data.  
+This site is also accessible at [https://ny-times-clone.firebaseapp.com/](https://ny-times-clone.firebaseapp.com/).
+
+Note: Dynaimic location-based weather has been disabled. Current geolocation API relies on an unsecured conneciton that causes Chrome to notify the user in the address. This results in a poor UX and the feature has been removed.
 
 ## Technologies Used
 

@@ -14,12 +14,13 @@ import { LocalTemp } from '../models/temp-getter';
 export class BriefingsComponent implements OnInit {
   ngOnInit() {
     this.getMarket();
-    this.getWeather();
+    this.getStaticWeather();
+    // this.getWeather();
   }
 
   stocks: USMarkets = new USMarkets();
-  location: FindLocation = new FindLocation();
   localWeather: LocalTemp = new LocalTemp();
+  // location: FindLocation = new FindLocation();
 
   gpscResults = {
     changePercent: null,
@@ -38,19 +39,29 @@ export class BriefingsComponent implements OnInit {
     ready: false
   };
 
-  getWeather() {
-    this.location.getLatLong()
-    .then( (geo) => {
-      this.weatherResults.styledLocation = `${geo["city"]}, ${geo["region_code"]}`;
-      this.localWeather.getLocalWeather({lat: geo["latitude"], long: geo["longitude"]})
-      .then( (weather) => {
-        this.weatherResults.icon = weather["weather"][0].icon;
-        this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
-        this.weatherResults.ready = true;
-      });
-    });
+  getStaticWeather() {
+    const portland: Object = {lat: 45.5426221, long: -122.7948126};
 
+    this.localWeather.getLocalWeather(portland).then((weather) => {
+      this.weatherResults.styledLocation = 'Portland, OR';
+      this.weatherResults.icon = weather["weather"][0].icon;
+      this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
+      this.weatherResults.ready = true;
+    })
   }
+
+  // getDynamicWeather() {
+  //   this.location.getLatLong()
+  //   .then( (geo) => {
+  //     this.weatherResults.styledLocation = `${geo["city"]}, ${geo["region_code"]}`;
+  //     this.localWeather.getLocalWeather({lat: geo["latitude"], long: geo["longitude"]})
+  //     .then( (weather) => {
+  //       this.weatherResults.icon = weather["weather"][0].icon;
+  //       this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
+  //       this.weatherResults.ready = true;
+  //     });
+  //   });
+  // }
 
   getMarket() {
     this.stocks.getTicker('gspc').then((response)=>{
