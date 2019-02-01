@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NytDatabaseService } from '../nyt-database.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-content',
@@ -9,11 +10,13 @@ import { NytDatabaseService } from '../nyt-database.service';
 export class MainContentComponent {
   constructor(private db: NytDatabaseService) {  }  
   
-  @Input() sectionArticles: string;
+  @Input() sectionArticles: Observable<any>;
   articles;
   
   getFromDb() {
     this.articles = this.db.getArticles(`${this.sectionArticles}/articles`)
   }
+
+  
 
 }
