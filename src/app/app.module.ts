@@ -5,7 +5,6 @@ import { AngularFireModule } from '@angular/fire'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 import { environment } from '../environments/environment'
-// import { masterFirebaseConfig } from './api-keys';
 
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +12,6 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BriefingsComponent } from './briefings/briefings.component';
 import { MainContentComponent } from './main-content/main-content.component';
-// import { NytArticlesService} from './nyt-articles.service';
 
 @NgModule({
   declarations: [
