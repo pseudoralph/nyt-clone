@@ -46,15 +46,10 @@ export class NavigationComponent {
   }
 
   loadSection(item) {
-    
     this.response.getArticlesBySection(item)
     .subscribe(response => {
-      this.sectionArticles = response['results']
-      console.log(this.sectionArticles)
+      this.db.addSection(item, response['results'])
     })
-    
-    
-    
     this.sectionToLoad.emit(item);
   }
 

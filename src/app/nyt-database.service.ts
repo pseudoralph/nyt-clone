@@ -6,14 +6,17 @@ import { fireHelper } from './firebase-helper.js';
   providedIn: 'root'
 })
 export class NytDatabaseService {
-  sectionData;
-
-  constructor(private db: AngularFireDatabase) {
-    this.sectionData = this.db.list('results')
-  }
+  constructor(private db: AngularFireDatabase) { }
 
   getArticles() {
-    return fireHelper(this.sectionData);
+    return fireHelper(this.db.list('results'));
+  }
+
+  addSection(section, payload) {
+    const date = new Date();
+
+    this.db.object(section).set({ created: `${date}`, articles: payload });
+
   }
 
   
