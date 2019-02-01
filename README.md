@@ -46,6 +46,14 @@ Note: Dynaimic location-based weather has been disabled. Current geolocation API
 JS, Angular
 
 ## Objectives
+- [ ] Refactor market and weather in briefings component to be an observable
+
+- [ ] Add button to dynamically pull data from NYT API and push into Firebase database and refresh page to show firebase-hosted articles
+
+- [ ] User authentication with ability to save an article
+
+- [ ] Dynamic content pulled from API in breifings section
+
  - [x] Project includes a detailed README with information on all completed features as well as features to be added.
 
  - [x] Project includes a detailed commit history that clearly shows at least eight hours of work between 8 and 5 on Friday. You are also welcome to put additional work into your project outside of that time frame.
