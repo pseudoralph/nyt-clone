@@ -12,27 +12,19 @@ export class MainContentComponent {
 
   constructor(private response: NytArticlesService, private db: NytDatabaseService) { }  
 
-  // loadNytContent() {
-  //   this.response.getArticlesBySection('science')
-  //     .subscribe(response => {
-  //       this.sectionArticles = response['results']
-  //       console.log(this.sectionArticles)
+  loadNytContent() {
+    this.response.getArticlesBySection('science')
+      .subscribe(response => {
+        this.sectionArticles = response['results']
+        console.log(this.sectionArticles)
         
-  //     })
-  // }
+      })
+  }
+
+  
 
   getFromDb() {
-    console.log('hi')
-
     this.db.getArticles().subscribe(x=> console.log(x))
-    
-      
-    // this.db.sectionData.valueChanges().subscribe(x=> console.log(x))
-
-
-
-    
-    // this.db.getArticles().subscribe(response => console.log(response))
 
   }
 
