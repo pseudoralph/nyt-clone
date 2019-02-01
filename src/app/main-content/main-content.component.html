@@ -1,2 +1,10 @@
 
 <button (click)="loadNytContent()">Load content</button>
+
+<div class="section-output">
+
+  <div *ngFor="let article of sectionArticles">
+    <p>{{article.title}}</p>
+
+  </div>
+</div>

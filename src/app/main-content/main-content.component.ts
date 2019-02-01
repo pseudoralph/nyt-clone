@@ -10,19 +10,20 @@ import { Observable } from 'rxjs';
   providers: [NytArticlesService]
 })
 export class MainContentComponent implements OnInit {
-  sectionArticles: Observable<any>;
+  sectionArticles;
 
-  constructor(private response: NytArticlesService) { }
-
-  // private articles: NytArticlesService
-  
+  constructor(private response: NytArticlesService) { }  
 
   ngOnInit() {
   }
 
   loadNytContent() {
-    this.response.getArticlesBySection('science').subscribe(response => console.log(response))
-    // console.log('clicked')
+    this.response.getArticlesBySection('science')
+      .subscribe(response => {
+        this.sectionArticles = response['results']
+        console.log(this.sectionArticles)
+        
+      })
   }
 
 }
