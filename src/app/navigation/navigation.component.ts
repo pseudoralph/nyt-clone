@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-// import { NytArticlesService } from '../nyt-articles.service';
+import { NytArticlesService } from '../nyt-articles.service';
+import { NytDatabaseService } from '../nyt-database.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,14 +9,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class NavigationComponent {
   @Output() navVisible = new EventEmitter();
+  @Output() sectionToLoad = new EventEmitter();
 
-  constructor() { }
-
-  articleLoader() {
-
-  }
-
-  nytApiQueries: string[] = [ 'automobiles', 'health', 'home', 'insider', 'movies', 'sports', 'sundayreview', 'theater'];
+  constructor(private response: NytArticlesService, private db: NytDatabaseService) { }  
+  
+  sectionArticles;
 
   navElements = [
     {text: 'Home Page', feature: null}, 
@@ -47,4 +45,18 @@ export class NavigationComponent {
     this.navVisible.emit();
   }
 
+  loadSection(item) {
+    
+    this.response.getArticlesBySection(item)
+    .subscribe(response => {
+      this.sectionArticles = response['results']
+      console.log(this.sectionArticles)
+    })
+    
+    
+    
+    this.sectionToLoad.emit(item);
+  }
+
 }
+  // nytApiQueries: string[] = [ 'automobiles', 'health', 'home', 'insider', 'movies', 'sports', 'sundayreview', 'theater'];

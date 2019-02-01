@@ -16,4 +16,6 @@ export class NytDatabaseService {
     return fireHelper(this.sectionData);
   }
 
+  
+
 }

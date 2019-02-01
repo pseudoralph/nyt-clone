@@ -12,4 +12,10 @@ export class AppComponent {
     this.navOpen = this.navOpen ? false : true;
   }
 
+  setSectionToLoad(section){
+    console.log(`now loading: ${section}`)
+
+    this.toggleNav();
+  }
+
 }

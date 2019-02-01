@@ -1,6 +1,6 @@
 <!-- <router-outlet></router-outlet> -->
 
-<app-navigation *ngIf="navOpen" (navVisible)="toggleNav()"></app-navigation>
+<app-navigation *ngIf="navOpen" (navVisible)="toggleNav()" (sectionToLoad)="setSectionToLoad($event)"></app-navigation>
 <app-header (navVisible)="toggleNav()"></app-header>
 <app-briefings></app-briefings>
 
