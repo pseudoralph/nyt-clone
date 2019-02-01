@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http'
-// import { Observable } from 'rxjs/Observable'
+import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,6 +12,5 @@ export class NytArticlesService {
 
   getArticlesBySection(section: string) {
     return this.http.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${this.api}`)
-
   }
 }

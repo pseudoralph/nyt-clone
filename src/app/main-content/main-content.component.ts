@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NytArticlesService } from '../nyt-articles.service';
-import { Observable } from 'rxjs';
-// import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.css'],
-  providers: [NytArticlesService]
+  styleUrls: ['./main-content.component.css']
 })
-export class MainContentComponent implements OnInit {
+export class MainContentComponent {
   sectionArticles;
 
   constructor(private response: NytArticlesService) { }  
-
-  ngOnInit() {
-  }
 
   loadNytContent() {
     this.response.getArticlesBySection('science')

@@ -18,6 +18,9 @@ The current date displayed on the left-hand side is produced by parsing JS's Dat
 
 The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with localilized weather. 
 
+February 1, 2019 updates:
+Clicking on the pancakes reveals the navigation. Clicking on a section heading will load its content in the main content section. The functionality of loading section content is accomplished by first querying a firebase database to check if data exists. If data doesn't exist or the data is evaluated as stale (> 1 day), a request is made to NYT's Top Stories API to populate/refresh the database. Ultimately, only 1 API request is made per day per section.
+
 Hierarchical overview:
 
 * app-component

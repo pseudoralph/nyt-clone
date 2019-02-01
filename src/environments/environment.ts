@@ -1,6 +1,8 @@
-import { apiKeys } from '../../.env.js'
+import { apiKeys, masterFirebaseConfig } from '../../.env.js'
 
 export const environment = {
   production: false,
-  api: apiKeys
+  api: apiKeys,
+  firebase: masterFirebaseConfig
 };
+
