@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { AngularFireDatabase } from '@angular/fire/database'
-import { map } from 'rxjs/operators'
-
+// import { map } from 'rxjs/operators'
+import { fireHelper } from './firebase-helper.js';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +10,23 @@ export class NytDatabaseService {
   sectionData;
 
   constructor(private db: AngularFireDatabase) {
-    this.sectionData = this.db.list('ny-times-clone')
+    this.sectionData = this.db.list('albums')
   }
 
   getArticles() {
-    return this.sectionData.valueChanges();
 
-  }
+    return fireHelper(this.sectionData);
 
-      //
-    // return this.albums.snapshotChanges().pipe(
+    // return this.sectionData.snapshotChanges().pipe(
     //   map(actions => 
     //    actions.map(a => ({ key: a.key, ...a.payload.val() }))
     //   )
     // );
+
+  }
+
+
+   
 
 
 

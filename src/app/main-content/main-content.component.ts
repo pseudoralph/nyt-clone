@@ -24,8 +24,15 @@ export class MainContentComponent {
   getFromDb() {
     console.log('hi')
 
+    this.db.getArticles().subscribe(x=> console.log(x))
     
-    this.db.getArticles().subscribe(response => console.log(response))
+      
+    // this.db.sectionData.valueChanges().subscribe(x=> console.log(x))
+
+
+
+    
+    // this.db.getArticles().subscribe(response => console.log(response))
 
   }
 
