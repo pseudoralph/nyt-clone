@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NytDatabaseService } from '../nyt-database.service';
 import { Observable } from 'rxjs';
 
@@ -7,16 +7,18 @@ import { Observable } from 'rxjs';
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css']
 })
-export class MainContentComponent {
-  constructor(private db: NytDatabaseService) {  }  
-  
-  @Input() sectionArticles: Observable<any>;
-  articles;
-  
-  getFromDb() {
-    this.articles = this.db.getArticles(`${this.sectionArticles}/articles`)
+export class MainContentComponent implements OnInit {
+
+  constructor(private db: NytDatabaseService, private articles: Observable<any>) { }
+
+  ngOnInit() { 
+    this.db.getArticles(`${this.loadSection}/results`).valueChanges().subscribe(results => {
+      this.articles = results})
   }
 
-  
+  @Input() loadSection: string;
+
+  // articles: Observable<any>;
+
 
 }
