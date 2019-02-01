@@ -7,12 +7,13 @@ import { NytDatabaseService } from '../nyt-database.service';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent {
-  @Input() sectionArticles: string;
-
   constructor(private db: NytDatabaseService) {  }  
- 
+  
+  @Input() sectionArticles: string;
+  articles;
+  
   getFromDb() {
-    this.db.getArticles(this.sectionArticles).subscribe(x=> console.log(x))
+    this.articles = this.db.getArticles(`${this.sectionArticles}/articles`)
   }
 
 }

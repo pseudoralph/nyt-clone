@@ -15,9 +15,6 @@ export class AppComponent {
 
   setSectionToLoad(section){
     this.sectionToDisplay = section;
-    
-    console.log(`now loading: ${this.sectionToDisplay}`)
-
     this.toggleNav();
   }
 

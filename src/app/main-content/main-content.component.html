@@ -1,6 +1,8 @@
+<button (click)="getFromDb()">Load {{ sectionArticles }}</button>
 
-<div class="section-output">
-
-<p> hi there !</p> {{ sectionArticles }}
+<div class="section-output" *ngFor="let article of articles | async">
   
+  <p>  {{ article.title }}</p> 
+
+ 
 </div>
