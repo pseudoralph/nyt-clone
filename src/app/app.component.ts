@@ -7,13 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   navOpen: Boolean;
+  sectionToDisplay;
 
   toggleNav() {
     this.navOpen = this.navOpen ? false : true;
   }
 
   setSectionToLoad(section){
-    console.log(`now loading: ${section}`)
+    this.sectionToDisplay = section;
+    
+    console.log(`now loading: ${this.sectionToDisplay}`)
 
     this.toggleNav();
   }

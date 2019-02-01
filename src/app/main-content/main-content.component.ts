@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { NytArticlesService } from '../nyt-articles.service';
+import { Component, Input } from '@angular/core';
 import { NytDatabaseService } from '../nyt-database.service';
 
 @Component({
@@ -8,24 +7,12 @@ import { NytDatabaseService } from '../nyt-database.service';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent {
-  sectionArticles;
+  @Input() sectionArticles: string;
 
-  constructor(private response: NytArticlesService, private db: NytDatabaseService) { }  
-
-  loadNytContent() {
-    this.response.getArticlesBySection('science')
-      .subscribe(response => {
-        this.sectionArticles = response['results']
-        console.log(this.sectionArticles)
-        
-      })
-  }
-
-  
-
+  constructor(private db: NytDatabaseService) {  }  
+ 
   getFromDb() {
-    this.db.getArticles().subscribe(x=> console.log(x))
-
+    this.db.getArticles(this.sectionArticles).subscribe(x=> console.log(x))
   }
 
 }
