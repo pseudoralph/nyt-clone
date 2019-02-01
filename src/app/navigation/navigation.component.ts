@@ -8,6 +8,35 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class NavigationComponent {
   @Output() navVisible = new EventEmitter();
 
+  nytApiQueries: string[] = [
+    'arts',
+    'automobiles',
+    'books',
+    'business',
+    'fashion',
+    'food',
+    'health',
+    'home',
+    'insider',
+    'magazine',
+    'movies',
+    'national',
+    'nyregion',
+    'obituaries',
+    'opinion',
+    'politics',
+    'realestate',
+    'science',
+    'sports',
+    'sundayreview',
+    'technology',
+    'theater',
+    'tmagazine',
+    'travel',
+    'upshot',
+    'world'
+  ];
+
   navElements = [
     {text: 'Home Page', feature: null}, 
     {text: 'World', feature: 'expandable'}, 
