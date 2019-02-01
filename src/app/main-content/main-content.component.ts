@@ -8,15 +8,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
+  articles;
 
-  constructor(private db: NytDatabaseService, private articles: Observable<any>) { }
+  constructor(private db: NytDatabaseService) { }
 
-  ngOnInit() { 
-    this.db.getArticles(`${this.loadSection}/results`).valueChanges().subscribe(results => {
-      this.articles = results})
+  ngOnInit() {
+    this.loadSection.subscribe(x=>console.log(x))
+
   }
 
-  @Input() loadSection: string;
+
+
+  @Input() loadSection: Observable<string>;
 
   // articles: Observable<any>;
 

@@ -4,5 +4,5 @@
 <app-header (navVisible)="toggleNav()"></app-header>
 <app-briefings></app-briefings>
 
-<app-main-content [loadSection]="sectionToDisplay"></app-main-content>
+<app-main-content [loadSection]="sectionToDisplay" *ngIf="sectionToDisplay"></app-main-content>
 

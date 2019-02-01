@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   navOpen: Boolean;
-  sectionToDisplay;
+  sectionToDisplay: Observable<string>;
 
   toggleNav() {
     this.navOpen = this.navOpen ? false : true;
   }
 
   setSectionToLoad(section){
-    this.sectionToDisplay = section;
+    // const payload = function() { return of (new Observable<string>(section))}
+
+    // this.sectionToDisplay = payload();
+
+    this.sectionToDisplay = from(new Observable<string>(section))
     this.toggleNav();
   }
 
