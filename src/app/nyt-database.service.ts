@@ -12,6 +12,10 @@ export class NytDatabaseService {
     return fireHelper(this.db.list(section));
   }
 
+  exists(section) {
+    return this.db.object(section).valueChanges();
+  }
+
   addSection(section, payload) {
     const date = new Date();
     this.db.object(section).set({ created: `${date}`, articles: payload });

@@ -28,7 +28,11 @@ Hierarchical overview:
 
 ### February 1, 2019 updates:
 
-Clicking on the pancakes reveals the navigation. Clicking on a section heading will load its content in the main content section. The functionality of loading section content is accomplished by first querying a firebase database to check if data exists. If data doesn't exist or the data is evaluated as stale (> 1 day), a request is made to NYT's Top Stories API to populate/refresh the database. Ultimately, only 1 API request is made per day per section.
+Clicking on the pancake stack reveals navigation. Clicking on a section heading will load its content in the main content section. The functionality of loading section content is accomplished by first querying a firebase database to check if data exists. 
+
+If data doesn't exist or the data is evaluated as stale (> 1 day), a request is made to NYT's Top Stories API to populate/refresh the database. Only 1 API request is made per day per section.
+
+  * [NEEDS REFACTOR] An observable w/in an observable seems questionable.
 
 ![Alt NYTimes clone](https://github.com/pseudoralph/nyt-clone/blob/master/src/assets/screen_shots/cloned_nytimes_screen_shot.png)
 
@@ -54,15 +58,18 @@ JS, Angular
 
 ## Objectives
 ### Personal
+- [x] Dynamic content pulled from API in breifings section
+
 - [ ] Refactor market and weather in briefings section to be an observables
 
 - [x] ~~Add button to dynamically pull data from NYT API and push into Firebase database and refresh page to show firebase-hosted articles~~ 
 
 - [x] Auto-load articles after selected from navication bar
 
+- [x] Uses a 24 hour cache to reduce number of API calls
+
 - [ ] User authentication with ability to save an article
 
-- [x] Dynamic content pulled from API in breifings section
 
 ---
 ### Outlined
