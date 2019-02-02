@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NytDatabaseService } from '../nyt-database.service';
-import { Observable } from 'rxjs';
-import { isObservable } from 'rxjs'
+import { Observable, isObservable } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-main-content',
@@ -17,7 +17,20 @@ export class MainContentComponent implements OnInit {
   ngOnInit() {
     console.log(`isObservable?: ${isObservable(this.loadSection)}`)
     console.log(this.loadSection)
+
+    // console.log(this.loadSection.subscribe().closed)
+    
   }
+
+  // export function fireHelper(payload) {
+  //   return payload.snapshotChanges().pipe(
+  //     map(actions => 
+  //      actions.map(a => ({ key: a.key, ...a.payload.val() }))
+  //     )
+  //   )
+  // }
+
+
 
 
 
