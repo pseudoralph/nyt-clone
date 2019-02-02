@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NytDatabaseService } from '../nyt-database.service';
 import { Observable } from 'rxjs';
+import { isObservable } from 'rxjs'
 
 @Component({
   selector: 'app-main-content',
@@ -13,7 +14,9 @@ export class MainContentComponent implements OnInit {
   constructor(private db: NytDatabaseService) { }
 
   ngOnInit() {
-    this.loadSection.subscribe(x=>console.log(x))
+    console.log( isObservable(this.loadSection))
+    
+    
 
   }
 

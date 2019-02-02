@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +15,8 @@ export class AppComponent {
   }
 
   setSectionToLoad(section){
-    // const payload = function() { return of (new Observable<string>(section))}
-
-    // this.sectionToDisplay = payload();
-
-    this.sectionToDisplay = from(new Observable<string>(section))
+    const payload = function() { return new Observable<string>(section) }
+    this.sectionToDisplay = payload();
     this.toggleNav();
   }
 
