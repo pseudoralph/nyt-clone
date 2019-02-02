@@ -15,7 +15,8 @@ export class AppComponent {
   }
 
   setSectionToLoad(section){
-    const payload = function() { return new Observable<string>(section) }
+    const payload = function():Observable<string> { return new Observable<string>(section) };
+
     this.sectionToDisplay = payload();
     this.toggleNav();
   }

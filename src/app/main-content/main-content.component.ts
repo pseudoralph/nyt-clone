@@ -10,14 +10,13 @@ import { isObservable } from 'rxjs'
 })
 export class MainContentComponent implements OnInit {
   articles;
+  path;
 
   constructor(private db: NytDatabaseService) { }
 
   ngOnInit() {
-    console.log( isObservable(this.loadSection))
-    
-    
-
+    console.log(`isObservable?: ${isObservable(this.loadSection)}`)
+    console.log(this.loadSection)
   }
 
 
