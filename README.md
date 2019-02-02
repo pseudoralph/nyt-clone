@@ -2,7 +2,7 @@
 
 #### NY Times clone website
 
-#### Ralph Perdomo. January 25, 2019
+#### Ralph Perdomo. February 1, 2019
 
 ## Description
 
@@ -18,9 +18,6 @@ The current date displayed on the left-hand side is produced by parsing JS's Dat
 
 The briefings section is a seperate component detached from heading-component. It instantiates breifings articles provided by a class module (models/briefings-article.ts). Additionally, the breifings section calls on an API (openweather & alphavantage) to retreive up-to-date stock market numbers (DJIA & S&P500) along with localilized weather. 
 
-February 1, 2019 updates:
-Clicking on the pancakes reveals the navigation. Clicking on a section heading will load its content in the main content section. The functionality of loading section content is accomplished by first querying a firebase database to check if data exists. If data doesn't exist or the data is evaluated as stale (> 1 day), a request is made to NYT's Top Stories API to populate/refresh the database. Ultimately, only 1 API request is made per day per section.
-
 Hierarchical overview:
 
 * app-component
@@ -29,11 +26,18 @@ Hierarchical overview:
   * briefing-component
   * main-content-component
 
+### February 1, 2019 updates:
+
+Clicking on the pancakes reveals the navigation. Clicking on a section heading will load its content in the main content section. The functionality of loading section content is accomplished by first querying a firebase database to check if data exists. If data doesn't exist or the data is evaluated as stale (> 1 day), a request is made to NYT's Top Stories API to populate/refresh the database. Ultimately, only 1 API request is made per day per section.
+
 ![Alt NYTimes clone](https://github.com/pseudoralph/nyt-clone/blob/master/src/assets/screen_shots/cloned_nytimes_screen_shot.png)
+
 
 ## Setup/Installation Requirements
 
-The following API keys are necessary to successfull build and launch this environment: ipStack, OpenWeatherMap, and Alphavantage. Enter these keys into the `template.env.js` file and rename to `.env.js` before launching.
+The following API keys are necessary to successfull build and launch this environment: NYTimes, ipStack, OpenWeatherMap, and Alphavantage. Enter these keys into the `template.env.js` file and rename to `.env.js` before launching. 
+
+A firebase realtime database must be used to serve content. Please include your update config snippet within your `.env.js` (`refer to updated template.env.js`).
 
 * clone this repository using `git clone https://github.com/pseudoralph/nyt-clone`
 * navigate into this repo and download dependencies: `npm install`
