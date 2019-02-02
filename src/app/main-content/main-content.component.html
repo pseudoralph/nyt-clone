@@ -1,1 +1,10 @@
-<pre>{{ loadSection | json}}</pre> 
+<div *ngIf="articles" >
+
+  <div *ngFor="let article of articles | async">
+
+    <pre class="raw-json">
+        {{article | json}}
+    </pre>
+  </div>
+
+</div>

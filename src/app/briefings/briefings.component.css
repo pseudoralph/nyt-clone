@@ -46,7 +46,6 @@ p {
 .localized-weather {
   margin: 10px 0;
   padding: 0 15px;
-
 }
 
 .stock-ticker p, .localized-weather p {
@@ -72,7 +71,6 @@ p {
 
 .weather-icon {
   margin-right: 15px;
-  /* display: inline-block; */
   width: 42px;
   height: 42px;
 }

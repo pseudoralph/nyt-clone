@@ -15,12 +15,10 @@ export class BriefingsComponent implements OnInit {
   ngOnInit() {
     this.getMarket();
     this.getStaticWeather();
-    // this.getWeather();
   }
 
   stocks: USMarkets = new USMarkets();
   localWeather: LocalTemp = new LocalTemp();
-  // location: FindLocation = new FindLocation();
 
   gpscResults = {
     changePercent: null,
@@ -49,19 +47,6 @@ export class BriefingsComponent implements OnInit {
       this.weatherResults.ready = true;
     })
   }
-
-  // getDynamicWeather() {
-  //   this.location.getLatLong()
-  //   .then( (geo) => {
-  //     this.weatherResults.styledLocation = `${geo["city"]}, ${geo["region_code"]}`;
-  //     this.localWeather.getLocalWeather({lat: geo["latitude"], long: geo["longitude"]})
-  //     .then( (weather) => {
-  //       this.weatherResults.icon = weather["weather"][0].icon;
-  //       this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
-  //       this.weatherResults.ready = true;
-  //     });
-  //   });
-  // }
 
   getMarket() {
     this.stocks.getTicker('gspc').then((response)=>{

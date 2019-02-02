@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-// import {  } from 'rxjs/observable'
-
+import { NytDatabaseService } from './nyt-database.service'
 
 @Component({
   selector: 'app-root',
@@ -9,6 +7,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private db: NytDatabaseService) { }
+
   navOpen: Boolean;
   sectionToDisplay;
 
@@ -17,12 +17,7 @@ export class AppComponent {
   }
 
   setSectionToLoad(section){
-    const payload = function():Observable<string> { return new Observable<string>(section) };
-
-    this.sectionToDisplay = payload();
-    // let something = new Observable.
-
-    // this.sectionToDisplay = new Rx
+    this.sectionToDisplay = this.db.getArticles(`${section}/articles`)
     this.toggleNav();
   }
 

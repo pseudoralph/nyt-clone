@@ -49,19 +49,32 @@ Note: Dynaimic location-based weather has been disabled. Current geolocation API
 JS, Angular
 
 ## Objectives
-- [ ] Refactor market and weather in briefings component to be an observable
+### Personal
+- [ ] Refactor market and weather in briefings section to be an observables
 
-- [ ] Add button to dynamically pull data from NYT API and push into Firebase database and refresh page to show firebase-hosted articles
+- [x] ~~Add button to dynamically pull data from NYT API and push into Firebase database and refresh page to show firebase-hosted articles~~ 
+
+- [x] Auto-load articles after selected from navication bar
 
 - [ ] User authentication with ability to save an article
 
-- [ ] Dynamic content pulled from API in breifings section
+- [x] Dynamic content pulled from API in breifings section
 
- - [x] Project includes a detailed README with information on all completed features as well as features to be added.
+---
+### Outlined
+- [x] Project includes a detailed README with information on all completed features as well as features to be added.
 
- - [x] Project includes a detailed commit history that clearly shows at least eight hours of work between 8 and 5 on Friday. You are also welcome to put additional work into your project outside of that time frame.
+- [x] Project includes a detailed commit history that clearly shows at least eight hours of work between 8 and 5 on Friday. You are also welcome to put additional work into your project outside of that time frame.
 
- - [x] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
+- [x] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
+
+- [x] README has been updated to include detailed information on all completed features as well as features you plan to add in the future.
+
+- [x] Code and Git documentation follow best practices (setup instructions in README, .gitignore file discluding unnecessary content from repo, detailed well-formatted commit messages, etc.)
+
+- [x] Project includes a working Firebase database.
+
+- [x] Project is deployed.
 
 ### License
 

@@ -12,9 +12,10 @@ export class NavigationComponent {
   @Output() sectionToLoad = new EventEmitter();
 
   constructor(private response: NytArticlesService, private db: NytDatabaseService) { }  
-  
-  sectionArticles;
 
+  // unused NYT sections array
+  // nytApiQueries: string[] = [ 'automobiles', 'health', 'home', 'insider', 'movies', 'sports', 'sundayreview', 'theater'];
+  
   navElements = [
     {text: 'Home Page', feature: null}, 
     {text: 'World', feature: 'expandable', q: 'world'}, 
@@ -46,6 +47,11 @@ export class NavigationComponent {
   }
 
   loadSection(item) {
+    // TODO: add logic and refactor
+    // this section will determine whether a section has been loaded already
+    // if it has, it will deliver content from cache
+    // it it's state (>1 day) or never been accessed, it'll query NYT API to push content into firebase
+
     this.response.getArticlesBySection(item)
     .subscribe(response => {
       this.db.addSection(item, response['results'])
@@ -54,4 +60,3 @@ export class NavigationComponent {
   }
 
 }
-  // nytApiQueries: string[] = [ 'automobiles', 'health', 'home', 'insider', 'movies', 'sports', 'sundayreview', 'theater'];
