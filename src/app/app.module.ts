@@ -26,7 +26,6 @@ import { MainContentComponent } from './main-content/main-content.component';
     HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase)
-
     // AppRoutingModule
   ],
   providers: [],

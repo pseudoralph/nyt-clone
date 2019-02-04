@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
 
 import { USMarkets } from '../models/stock-getter';
-import { FindLocation } from '../models/ip-getter'
-import { LocalTemp } from '../models/temp-getter';
+
+import { TempService } from '../temp.service';
+import { MarketDataService } from '../market-data.service';
 
 @Component({
   selector: 'app-briefings',
@@ -12,13 +13,29 @@ import { LocalTemp } from '../models/temp-getter';
 })
 
 export class BriefingsComponent implements OnInit {
+  weather = {};
+
+  constructor(private tempService: TempService, private marketData: MarketDataService) { }
+
   ngOnInit() {
     this.getMarket();
-    this.getStaticWeather();
+
+    this.marketData.market('djia').subscribe(response => {
+
+      console.log(response["Global Quote"].replace(/(\d\d[.]\s)|%/g, ''))
+    })
+
+    this.tempService.getLocalWeather().subscribe(results => {
+      this.weather['icon'] = results["weather"][0].icon;
+      this.weather['fahrenheit'] = (results["main"].temp - 273.15) * 9/5 +32;
+      this.weather['styledLocation'] = "Portland, OR";
+
+      console.log(results);
+    });
+
   }
 
   stocks: USMarkets = new USMarkets();
-  localWeather: LocalTemp = new LocalTemp();
 
   gpscResults = {
     changePercent: null,
@@ -36,17 +53,6 @@ export class BriefingsComponent implements OnInit {
     styledLocation: null,
     ready: false
   };
-
-  getStaticWeather() {
-    const portland: Object = {lat: 45.5426221, long: -122.7948126};
-
-    this.localWeather.getLocalWeather(portland).then((weather) => {
-      this.weatherResults.styledLocation = 'Portland, OR';
-      this.weatherResults.icon = weather["weather"][0].icon;
-      this.weatherResults.fahrenheit = (weather["main"].temp - 273.15) * 9/5 +32 ;
-      this.weatherResults.ready = true;
-    })
-  }
 
   getMarket() {
     this.stocks.getTicker('gspc').then((response)=>{
