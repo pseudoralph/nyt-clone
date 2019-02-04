@@ -11,7 +11,7 @@ import { MarketDataService } from '../market-data.service';
 })
 
 export class BriefingsComponent implements OnInit {
-  weather = {weather: null, fahrenheit: null, styledLocation: null};
+  weather = {icon: null, fahrenheit: null, styledLocation: null};
   djia;
   gspc;
 
@@ -27,9 +27,9 @@ export class BriefingsComponent implements OnInit {
     });
 
     this.tempService.getLocalWeather().subscribe(results => {
-      this.weather['icon'] = `assets/img/weather_icons/${results["weather"][0].icon}.svg`;
-      this.weather['fahrenheit'] = (results["main"].temp - 273.15) * 9/5 +32;
-      this.weather['styledLocation'] = "Portland, OR";
+      this.weather.icon = `assets/img/weather_icons/${results["weather"][0].icon}.svg`;
+      this.weather.fahrenheit = (results["main"].temp - 273.15) * 9/5 +32;
+      this.weather.styledLocation = "Portland, OR";
     });
 
   }
