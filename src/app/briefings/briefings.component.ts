@@ -11,7 +11,7 @@ import { MarketDataService } from '../market-data.service';
 })
 
 export class BriefingsComponent implements OnInit {
-  weather = {};
+  weather = {weather: null, fahrenheit: null, styledLocation: null};
   djia;
   gspc;
 
