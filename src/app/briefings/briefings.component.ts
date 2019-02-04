@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BriefingsArticle } from '../models/briefings-article';
 
-import { USMarkets } from '../models/stock-getter';
-
 import { TempService } from '../temp.service';
 import { MarketDataService } from '../market-data.service';
 
@@ -14,55 +12,24 @@ import { MarketDataService } from '../market-data.service';
 
 export class BriefingsComponent implements OnInit {
   weather = {};
+  djia;
+  gspc;
 
   constructor(private tempService: TempService, private marketData: MarketDataService) { }
 
   ngOnInit() {
-    this.getMarket();
-
     this.marketData.market('djia').subscribe(response => {
+      this.djia = parseFloat(response['Global Quote']['10. change percent'].replace(/%/,'')).toFixed(2);
+    });
 
-      console.log(response["Global Quote"].replace(/(\d\d[.]\s)|%/g, ''))
-    })
+    this.marketData.market('gspc').subscribe(response => {
+      this.gspc = parseFloat(response['Global Quote']['10. change percent'].replace(/%/,'')).toFixed(2);
+    });
 
     this.tempService.getLocalWeather().subscribe(results => {
-      this.weather['icon'] = results["weather"][0].icon;
+      this.weather['icon'] = `assets/img/weather_icons/${results["weather"][0].icon}.svg`;
       this.weather['fahrenheit'] = (results["main"].temp - 273.15) * 9/5 +32;
       this.weather['styledLocation'] = "Portland, OR";
-
-      console.log(results);
-    });
-
-  }
-
-  stocks: USMarkets = new USMarkets();
-
-  gpscResults = {
-    changePercent: null,
-    ready: false
-  };
-    
-  djiaResults = {
-    changePercent: null,
-    ready: false
-  };
-    
-  weatherResults = {
-    icon: null,
-    fahrenheit: null,
-    styledLocation: null,
-    ready: false
-  };
-
-  getMarket() {
-    this.stocks.getTicker('gspc').then((response)=>{
-      this.gpscResults.changePercent =  parseFloat(response["change percent"]).toFixed(2);
-      this.gpscResults.ready = true;
-    });
-  
-    this.stocks.getTicker('djia').then((response)=>{
-      this.djiaResults.changePercent =  parseFloat(response["change percent"]).toFixed(2);
-      this.djiaResults.ready = true;
     });
 
   }

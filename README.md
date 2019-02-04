@@ -60,7 +60,7 @@ JS, Angular
 ### Personal
 - [x] Dynamic content pulled from API in breifings section
 
-- [ ] Refactor market and weather in briefings section to be an observables
+- [x] Refactor market and weather in briefings section to be an observables
 
 - [x] ~~Add button to dynamically pull data from NYT API and push into Firebase database and refresh page to show firebase-hosted articles~~ 
 

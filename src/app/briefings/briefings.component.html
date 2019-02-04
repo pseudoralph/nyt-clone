@@ -9,17 +9,17 @@
     </div>
   </div>
 
-  <div *ngIf="gpscResults.ready && djiaResults.ready" class="stock-ticker">
+  <div class="stock-ticker">
     <p>
-      S&P 500: <span [class]="gpscResults.changePercent > 0 ? 'up':'down' "> {{ gpscResults.changePercent }} </span>
+      S&P 500: <span [class]="gspc > 0 ? 'up':'down' "> {{ gspc }} </span>
     </p>
     <p>
-      Dow: <span [class]="djiaResults.changePercent > 0 ? 'up':'down' "> {{ djiaResults.changePercent }} </span>
+      Dow: <span [class]="djia > 0 ? 'up':'down' "> {{ djia }} </span>
     </p>
   </div>
 
   <div class="localized-weather">
-    <img src="assets/img/weather_icons/{{ weather.icon }}.svg" class="weather-icon">
+    <img src="{{ weather.icon }}" class="weather-icon">
 
     <div class="copy">
       <p id="weather">
